@@ -1,0 +1,56 @@
+### CLIENT POST VALID
+POST /api/client/ HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "lastname" : "Ivanov",
+  "firstname" : "Ivan",
+  "middlename" : "Ivanovich",
+  "documentType" : "PASSPORT",
+  "documentSN" : "111111111",
+  "birthDate" : "1901-12-29"
+}
+
+### CLIENT POST INVALID
+POST /api/client/ HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "lastname" : null,
+  "firstname" : null,
+  "middlename" : null,
+  "documentType" : null,
+  "documentSN" : null,
+  "birthDate" : null
+}
+
+### CLIENT GET
+GET /api/client/ HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### CLIENT POST VALID
+POST /api/client/1/bank-accounts HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "number" : "11111111",
+  "currency" : "EUR",
+  "clientId" : "1"
+}
+
+
+### CLIENT POST INVALID
+POST /api/client/1/bank-accounts HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "number" : "11111111",
+  "currency" : "YEN",
+  "clientId" : "1"
+}
+
